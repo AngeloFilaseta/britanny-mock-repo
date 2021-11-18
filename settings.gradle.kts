@@ -9,4 +9,5 @@
 
 rootProject.name = "britanny-mock-repo"
 
-include(":scala")
+include("scala")
+include("helloWorld")
