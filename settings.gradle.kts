@@ -11,3 +11,4 @@ rootProject.name = "britanny-mock-repo"
 
 include("scala")
 include("helloWorld")
+include("esp")
