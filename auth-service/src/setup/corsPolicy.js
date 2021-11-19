@@ -1,6 +1,6 @@
 const cors = require('cors')
 const corsOptions = {
-    origin: require("../../conf").clientAddress + ":" + require("../../conf").clientPort,
+    origin: require("../conf").clientAddress + ":" + require("../conf").clientPort,
     credentials: true,
 }
 
