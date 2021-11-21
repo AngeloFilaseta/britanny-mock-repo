@@ -1,4 +1,4 @@
-// CArtAgO artifact code for project helloWorld
+// CArtAgO artifact code for project testJaCaMo
 
 package tools;
 

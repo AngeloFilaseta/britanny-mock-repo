@@ -1,4 +1,4 @@
-// Agent sample_agent in project helloWorld
+// Agent sample_agent in project testJaCaMo
 
 /* Initial beliefs and rules */
 

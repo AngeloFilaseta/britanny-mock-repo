@@ -1,5 +1,5 @@
 /*
-    helloWorld
+    testJaCaMo
     ---------------------------
 
     JaCaMo Application File
@@ -9,10 +9,10 @@
     (see jacamo/doc/jcm.html for more information about what can be defined in this file)
 
     JaCaMo 1.0
-    November 18, 2021 - 11:28:02
+    November 21, 2021 - 20:06:27
 */
 
-mas helloWorld {
+mas testJaCaMo {
 
     agent sample_agent
 

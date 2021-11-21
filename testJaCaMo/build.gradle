@@ -1,8 +1,8 @@
 /*
-   Project helloWorld
+   Project testJaCaMo
 
    Gradle build file for JaCaMo Applications
-   November 18, 2021 - 11:28:02
+   November 21, 2021 - 20:06:27
 */
 
 defaultTasks 'run'
@@ -27,10 +27,10 @@ repositories {
     //maven { url "https://jade.tilab.com/maven/" }
 
     flatDir {
-        dirs 'lib'
+       dirs 'lib'
     }
 
-    mavenCentral()
+    mavenCentral()    
 }
 
 dependencies {
@@ -58,7 +58,7 @@ task run (type: JavaExec, dependsOn: 'classes') {
         mkdir 'log'
     }
     main 'jacamo.infra.JaCaMoLauncher'
-    args 'helloWorld.jcm'
+    args 'testJaCaMo.jcm'
     classpath sourceSets.main.runtimeClasspath
 }
 
@@ -70,7 +70,7 @@ task uberJar(type: Jar, dependsOn: 'classes') {
     manifest {
         attributes 'Main-Class': 'jacamo.infra.JaCaMoLauncher'
     }
-    baseName = 'jacamo-helloWorld' // the name must start with jacamo so that jacamo...jar is found in the classpath
+    baseName = 'jacamo-testJaCaMo' // the name must start with jacamo so that jacamo...jar is found in the classpath
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     from (project.projectDir.absolutePath) {
         include '**/*.asl'
@@ -83,13 +83,13 @@ task uberJar(type: Jar, dependsOn: 'classes') {
     }
     with jar
 
-            doFirst {
-                copy {
-                    from 'helloWorld.jcm'
-                    rename 'helloWorld.jcm','default.jcm'
-                    into project.buildDir.absolutePath + '/jcm'
-                }
-            }
+    doFirst {
+        copy {
+            from 'testJaCaMo.jcm'
+            rename 'testJaCaMo.jcm','default.jcm'
+            into project.buildDir.absolutePath + '/jcm'
+        }
+    }
 }
 
 clean {
