@@ -7,8 +7,4 @@
  * in the user manual at https://docs.gradle.org/7.2/userguide/multi_project_builds.html
  */
 
-rootProject.name = "britanny-mock-repo"
-
-include("scala")
-include("testJaCaMo")
-include("esp")
+rootProject.name = "testJaCaMo"
