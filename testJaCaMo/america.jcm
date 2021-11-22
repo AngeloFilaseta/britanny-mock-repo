@@ -1,0 +1,27 @@
+mas helloworld_america {
+    
+	agent maria : helloDifferentNodes.asl {
+    	beliefs: message("Bom dia")
+    	//focus: brazil.gui
+        roles: rl in hello_org.jacamo_team @ europe
+        focus: europe::jacamo.gui
+    }
+    
+    agent alice : helloDifferentNodes.asl {
+    	beliefs: message("Good morning")
+    	//focus: usa.gui
+        roles: rs in hello_org.jacamo_team @ europe
+        focus: europe::jacamo.gui
+    }
+    
+   	/*workspace brazil {
+        artifact gui: display.GUIConsole("Brazil")
+    }
+    workspace usa {
+        artifact gui: display.GUIConsole("USA")
+    }*/
+    
+    //to manage distributed workspaces (idk right now)
+    platform: cartago()
+    node europe running @ localhost
+}

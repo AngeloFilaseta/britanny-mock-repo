@@ -14,9 +14,154 @@
 
 mas testJaCaMo {
 
-    agent sample_agent
-
+	/*First example*/
+    /*agent francois : hello.asl {
+    	beliefs: message("Bonjour")
+    }
     
+    agent maria : hello.asl {
+    	beliefs: message("Bom dia")
+    }
+    
+    agent giacomo : hello.asl {
+    	beliefs: message("Buongiorno")
+    }
+    
+    //what is going to happen in this case?
+    agent ateo : hello.asl*/
+    
+	/*Second Example*/	
+	/*agent francois : hello2.asl {
+    	beliefs: country(fr)
+    }
+    
+    agent maria : hello2.asl {
+    	beliefs: country(br)
+    }
+    
+    agent giacomo : hello2.asl {
+    	beliefs: country(it)
+    }
+    
+    agent ateo : hello2.asl {
+    	beliefs: country(none)
+    }*/
+    
+    /*Third Example*/
+    
+    //to make an agent know about the workspace, it has to focus on it, using the instruction focus: workspaceName.artifactName
+	/*agent francois : hello3.asl {
+    	beliefs: message("Bonjour")
+    	focus: jacamo.gui
+    }
+    
+    agent maria : hello3.asl {
+    	beliefs: message("Bom dia")
+    	focus: jacamo.gui
+    }
+    
+    agent giacomo : hello3.asl {
+    	beliefs: message("Buongiorno")
+    	focus: jacamo.gui
+    }
+    
+    agent ateo : hello3.asl {
+    	focus: jacamo.gui
+    }
+    
+    //the workspace is actually the environment
+     workspace jacamo {
+     	//create an instance of the display artifact and name it gui.
+     	//place it in a workspace called jacamo.
+        artifact gui: display.GUIConsole("common")
+    }*/
+    
+    /*Fourth Example*/
+	/*agent francois : hello3.asl {
+    	beliefs: message("Bonjour")
+    	focus: france.gui
+    	//what is going to happen?
+    	//focus: italy.gui
+    }
+    
+    agent maria : hello3.asl {
+    	beliefs: message("Bom dia")
+    	focus: brazil.gui
+    }
+    
+    agent giacomo : hello3.asl {
+    	beliefs: message("Buongiorno")
+    	focus: italy.gui
+    }
+       
+    //we can create more than one workspace (with different names)
+    //the artifacts name in different workspaces can be repeated
+    workspace france {
+        artifact gui: display.GUIConsole("France")
+    }
+    workspace italy {
+        artifact gui: display.GUIConsole("Italy")
+    }
+    workspace brazil {
+        artifact gui: display.GUIConsole("Brazil")
+    }*/
+	
+	/*Fifth Example */
+	//show them hello4 and hello5 here
+	/*agent francois : hello5.asl {
+    	beliefs: message("Bonjour")
+    	focus: france.gui
+    	focus: italy.gui
+    }
+    
+    agent maria : hello3.asl {
+    	beliefs: message("Bom dia")
+    	focus: brazil.gui
+    }
+    
+    agent giacomo : hello3.asl {
+    	beliefs: message("Buongiorno")
+    	focus: italy.gui
+    }
+       
+    //we can create more than one workspace (with different names)
+    //the artifacts name in different workspaces can be repeated
+     workspace france {
+        artifact gui: display.GUIConsole("France")
+    }
+    workspace italy {
+        artifact gui: display.GUIConsole("Italy")
+    }
+    workspace brazil {
+        artifact gui: display.GUIConsole("Brazil")
+    }*/
+    
+    /*Sixth Example*/
+    agent francois : helloCooperative.asl {
+    	focus: jacamo.gui
+    }
+    agent maria : helloCooperative.asl {
+    	focus: jacamo.gui
+    }
+    agent giacomo : helloCooperative.asl {
+    	focus: jacamo.gui
+    }
+    agent alice : helloCooperative.asl {
+    	focus: jacamo.gui
+    }
 
+    workspace jacamo {
+    	artifact gui: display.GUIConsole("common")
+    }
+    
+     organisation hello_org: org1.xml {     // the organisational entity is hello_org from spec org1.xml
+    	group jacamo_team: team {          // instance group (jacamo_team) from spec team
+    		responsible-for: hello_eng       // that will be responsible for the execution of scheme hello_sch (defined below)
+    		players: francois rv,            // the roles of the agents in this group
+    		         maria    rl,
+    		         giacomo  rc,
+    		         alice    rs
+    	}
+    	scheme hello_eng: hello_sch        // instance scheme (hello_eng) from spec hello_sch
+    }
 }
-
