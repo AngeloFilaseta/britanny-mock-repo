@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
-#include <../.pio/libdeps/nodemcuv2/CoAP simple library/coap-simple.h>
+#include <coap-simple.h>
 
 const char* ssid = "Minualex";
 const char* password = "8u6t6o&mmrvhy";
