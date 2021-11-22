@@ -4,7 +4,7 @@
 !setup.
 /* Initial goals */
 
-+!setup <- joinRemoteWorkspace("jacamo","localhost",_).
++!setup : true <- joinRemoteWorkspace("jacamo", "localhost", _); .print("helloooo").
 
 +!print_h    : focused(jacamo,gui,ArtId) <- printMsg("H")[artifact_id(ArtId)]; .wait(700).
 +!print_e    : focused(jacamo,gui,ArtId) <- printMsg("e")[artifact_id(ArtId)]; .wait(700).
