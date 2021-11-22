@@ -7,5 +7,5 @@ tasks.register<Exec>("test") {
 }
 
 tasks.register<Exec>("upload") {
-    commandLine("pio", "run", "-t", "upload")
+    commandLine("pio", "run", "-t", "upload", "-t", "monitor")
 }
