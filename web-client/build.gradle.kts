@@ -14,3 +14,8 @@ tasks.register<NpmTask>("run"){
   dependsOn(tasks.npmInstall)
   npmCommand.set(listOf("start"))
 }
+
+tasks.register<NpmTask>("test"){
+  dependsOn(tasks.npmInstall)
+  npmCommand.set(listOf("run", "test", "--"))
+}
