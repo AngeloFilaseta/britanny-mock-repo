@@ -226,6 +226,7 @@ hs_err_pid*
 .nfs*
 
 ### Node ###
+package-lock.json
 # Logs
 logs
 npm-debug.log*
