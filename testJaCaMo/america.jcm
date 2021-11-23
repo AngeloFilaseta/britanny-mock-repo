@@ -1,0 +1,17 @@
+mas helloworld_america {
+    
+	agent maria : helloClientNodes.asl {
+    	focus: jacamo.gui
+        roles: rl in hello_org.jacamo_team @ europe
+    }
+    
+    agent alice : helloClientNodes.asl {
+    	join: jacamo
+    	focus: jacamo.gui
+        roles: rs in hello_org.jacamo_team @ europe    
+    }
+    
+    //to manage distributed workspaces (idk right now)
+    platform: cartago()
+    node europe running @ localhost
+}

@@ -1,0 +1,27 @@
+
+mas helloworld_europe {
+    
+	agent francois : helloDifferentNodes.asl {
+        focus: jacamo.gui
+    }
+    
+    agent giacomo : helloDifferentNodes.asl {
+    	focus: jacamo.gui
+    }
+    
+    workspace jacamo {
+        artifact gui: display.GUIConsole("common")
+    }
+        
+    organisation hello_org: org1.xml {
+        group jacamo_team: team {
+            responsible-for: hello_eng
+            players: francois rv,
+                     giacomo  rc
+        }
+        scheme hello_eng: hello_sch
+    }
+    
+    //to manage distributed workspaces (idk right now)
+    platform: cartago("infrastructure")
+}
