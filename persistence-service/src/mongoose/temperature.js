@@ -13,4 +13,3 @@ let TemperatureSchema = new Schema({
 })
 
 module.exports = mongoose.model("Temperature", TemperatureSchema)
-
