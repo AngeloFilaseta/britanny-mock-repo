@@ -1,7 +1,6 @@
 const server = require('../src/server')
 const supertest = require('supertest')
 const db = require('./util/db')
-const mongoose = require("mongoose")
 
 beforeAll((done) => db.createConnectionToTestDB(done))
 beforeEach(() => db.resetTestDB())
