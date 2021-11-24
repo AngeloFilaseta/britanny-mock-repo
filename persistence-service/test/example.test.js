@@ -1,36 +1,38 @@
 const server = require('../src/server')
-//const mongoose = require("mongoose")
-const supertest = require('supertest')
+const db = require('./util/db')
+const get = require('./util/get')
 
-/* -- Recreates and drops db after each test (beforeAll and afterAll available)
+beforeEach((done) => db.createConnectionToDB(done))
 
-beforeEach((done) => {
-  mongoose.connect("mongodb://localhost:27017/JestDB",
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    () => done());
-})
+afterEach((done) => db.dropConnectedDB(done))
 
-afterEach((done) => {
-  mongoose.connection.db.dropDatabase(() => {
-    mongoose.connection.close(() => done())
-  });
-})
+test(
+  "Checking for a temperature existence on non-existing temperature", async () => {
+    await get.test(server, "/temperature/exists")
+      .body({value: 420})
+      .onResponse((response) => {expect(response.body.exists).toBe(false)})
+      .execute()
+  }
+)
 
-*/
+test(
+  "Checking for a temperature existence with NaN value", async () => {
+    await get.test(server, "/temperature/exists")
+      .body({value: "wrong"})
+      .code(406)
+      .execute()
+  }
+)
 
-it('Testing to see if Jest works', () => {
-  expect(1).toBe(1)
-})
+test(
+  "Checking for a temperature existence without specifying a value", async () => {
+    await get.test(server, "/temperature/exists")
+      .code(406)
+      .execute()
+  }
+)
 
-test("GET /exampleRoute/greetings", async () => {
-  await supertest(server)
-    .get("/exampleRoute/greetings")
-    .expect(200)
-    .then((response) => {
-      expect(response.text).toEqual("Hello there!")
-    })
-})
-
+/*
 test("POST /exampleRoute/increment", async () => {
   await supertest(server)
     .post("/exampleRoute/increment")
@@ -41,5 +43,5 @@ test("POST /exampleRoute/increment", async () => {
     .then((response) => {
       expect(response.body.x).toEqual(1)
     })
-})
+})*/
   

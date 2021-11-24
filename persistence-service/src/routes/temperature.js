@@ -13,11 +13,15 @@ router.post("/temperature/save", (req, res) => {
 })
 
 router.get("/temperature/exists", async function(req, res){
-    await Temperature.findOne({ value: req.body.value}).then(async result => {
-        res.status(200).json({exists: !!result})
-    }).catch(err => {
-        res.status(400).json({err: err})
-    })
+    if(req.body.value === null || req.body.value === undefined || isNaN(req.body.value)){
+        res.status(406).json({err: "Some argument is not valid"})
+    } else {
+        await Temperature.findOne({ value: req.body.value}).then(async result => {
+            res.status(200).json({exists: !!result})
+        }).catch(err => {
+            res.status(400).json({err: err})
+        })
+    }
 })
 
 module.exports = router
