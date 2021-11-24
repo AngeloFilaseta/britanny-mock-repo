@@ -1,46 +1,41 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
+#include "HttpStatusCodes_C++.h"
 #include "WifiSecrets.h"
 
-// Insert secret values in file "WifiSecrets.h"
-const char* ssid = SECRET_WIFI_SSID;
-const char* password = SECRET_WIFI_PASSWORD;
+void connectToWiFi();
 
 ESP8266WebServer server(80);
 
 void setup(void) {
     Serial.begin(115200);
-    WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid, password);
-    Serial.println("");
-
-    // Wait for connection
-    while (WiFi.status() != WL_CONNECTED) {
-        delay(500);
-        Serial.print(".");
-    }
-    Serial.println("");
-    Serial.print("Connected to ");
-    Serial.println(ssid);
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
+    connectToWiFi();
 
     server.on("/", []() {
-        server.send(200, "text/plain", "Hello from esp8266 server web!");
-    });
-
-    server.on("/inline", []() {
-        server.send(200, "text/plain", "this works as well");
+        server.send(HttpStatus::OK, "text/plain", "Hello ESP8266!");
     });
 
     server.onNotFound([]() {
-        server.send(404, "text/plain", "Uri not found "+server.uri());
+        server.send(HttpStatus::NotFound, "text/plain", "Resource not found: "+server.uri());
     });
 
     server.begin();
-    Serial.println("HTTP server started");
+    Serial.println("HTTP Server ready!");
 }
 
 void loop(void) {
     server.handleClient();
+}
+
+void connectToWiFi() {
+    WiFi.mode(WIFI_STA);
+    WiFi.begin(SECRET_WIFI_SSID, SECRET_WIFI_PASSWORD);
+    Serial.println((String) "Attempting connection to " + SECRET_WIFI_SSID);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.print(".");
+    }
+    Serial.println();
+    Serial.println((String)"Connected to " + SECRET_WIFI_SSID);
+    Serial.println((String)"IP address: " + WiFi.localIP().toString());
 }
