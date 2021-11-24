@@ -1,57 +1,46 @@
 #include <ESP8266WiFi.h>
-#include <WiFiUdp.h>
-#include <coap-simple.h>
-#include "callbacks/callback_light.h"
-#include "callbacks/callback_response.h"
+#include <ESP8266WebServer.h>
+#include "WifiSecrets.h"
 
-const char* ssid = "Minualex";
-const char* password = "8u6t6o&mmrvhy";
+// Insert secret values in file "WifiSecrets.h"
+const char* ssid = SECRET_WIFI_SSID;
+const char* password = SECRET_WIFI_PASSWORD;
 
-// UDP and CoAP class
-WiFiUDP udp;
-Coap coap(udp);
+ESP8266WebServer server(80);
 
-// LED STATE
-bool LEDSTATE;
-
-void connectToWifi();
-void setupCallbacks();
-
-void setup() {
+void setup(void) {
     Serial.begin(115200);
-    connectToWifi();
-    // LED State
-    pinMode(LED_BUILTIN, OUTPUT);
-    digitalWrite(LED_BUILTIN, HIGH);
-    LEDSTATE = true;
-    setupCallbacks();
-    // start coap server/client
-    coap.start();
-}
-
-void loop() {
-    delay(1000);
-    coap.loop();
-}
-
-void connectToWifi() {
+    WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
+    Serial.println("");
+
+    // Wait for connection
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");
     }
     Serial.println("");
-    Serial.println("WiFi connected");
+    Serial.print("Connected to ");
+    Serial.println(ssid);
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
+
+    server.on("/", []() {
+        server.send(200, "text/plain", "Hello from esp8266 server web!");
+    });
+
+    server.on("/inline", []() {
+        server.send(200, "text/plain", "this works as well");
+    });
+
+    server.onNotFound([]() {
+        server.send(404, "text/plain", "Uri not found "+server.uri());
+    });
+
+    server.begin();
+    Serial.println("HTTP server started");
 }
 
-void setupCallbacks() {
-    Serial.println("Setup Callback Light");
-    coap.server(callback_light, "light");
-
-    // client response callback.
-    // this endpoint is single callback.
-    Serial.println("Setup Response Callback");
-    coap.response(callback_response);
+void loop(void) {
+    server.handleClient();
 }
