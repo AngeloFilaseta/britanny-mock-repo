@@ -1,9 +1,9 @@
 module.exports = {
     clientAddress: 'http://localhost',
     clientPort: 5000,
-    dbAddress: 'mongodb://127.0.0.1/brittany_persistence',
+    dbAddress: 'mongodb://database:27017/brittany_persistence',
     testDbAddress: 'mongodb://127.0.0.1/brittany_persistence_test',
-    servicePort: 3000,
+    servicePort: 8081,
     asciiArt: 
         '######\n' +                                                                                                                                                                   
         '#     # #####  # ##### #####   ##   #    # #   #    #####  ###### #####   ####  #  ####  ##### ###### #    #  ####  ######\n' +

@@ -19,3 +19,15 @@ tasks.register<NodeTask>("test"){
   dependsOn(tasks.npmInstall)
   script.set(file("node_modules/jest/bin/jest.js"))
 }
+
+tasks.register<Exec>("dockerUp"){
+  commandLine("docker-compose", "up", "-d", "--build")
+}
+
+tasks.register<Exec>("dockerDown"){
+  commandLine("docker-compose", "down")
+}
+
+tasks.register<Exec>("dockerDestroy"){
+  commandLine("docker-compose", "down", "--volumes")
+}
