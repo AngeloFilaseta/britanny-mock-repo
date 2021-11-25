@@ -9,6 +9,9 @@
 
 rootProject.name = "britanny-mock-repo"
 
-include("scala")
-include("testJaCaMo")
+include("auth-service")
+include("broker")
 include("esp")
+include("persistence-service")
+include("testJaCaMo")
+include("web-client")
