@@ -1,4 +1,5 @@
 FROM node:alpine
-COPY . .
+COPY package.json .
 RUN	npm install --silent
+COPY . .
 CMD node index.js
