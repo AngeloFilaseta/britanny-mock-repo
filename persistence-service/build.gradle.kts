@@ -28,6 +28,10 @@ tasks.register<Exec>("dockerDown"){
   commandLine("docker-compose", "down")
 }
 
-tasks.register<Exec>("dockerDestroy"){
-  commandLine("docker-compose", "down", "--volumes")
+tasks.register<Exec>("dockerLog"){
+  commandLine("docker-compose", "logs", "-f", "persistence")
+}
+
+tasks.register<Exec>("dockerClearDb"){
+  commandLine("docker", "volume", "rm", "persistence-service_database_data")
 }

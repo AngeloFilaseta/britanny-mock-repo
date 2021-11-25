@@ -10,8 +10,6 @@ services:
     image: mongo
     volumes:
       - database_data:/data/db
-    logging:
-      driver: none
 
 volumes:
   database_data:
