@@ -1,9 +1,13 @@
 module.exports = {
-    clientAddress: 'http://localhost',
-    clientPort: 5000,
     dbAddress: 'mongodb://database:27017/brittany_auth',
     testDbAddress: 'mongodb://127.0.0.1/brittany_auth',
     servicePort: 8080,
     asciiArt: 
-        'TODO BRITTANY AUTH ASCII ART',
+        '    ____       _ __  __                                   __  __\n' +
+        '   / __ )_____(_) /_/ /_____ _____  __  __   ____ ___  __/ /_/ /_\n' +
+        '  / __  / ___/ / __/ __/ __ `/ __ \\/ / / /  / __ `/ / / / __/ __ \\ \n' +
+        ' / /_/ / /  / / /_/ /_/ /_/ / / / / /_/ /  / /_/ / /_/ / /_/ / / /\n' +
+        '/_____/_/  /_/\\__/\\__/\\__,_/_/ /_/\\__, /   \\__,_/\\__,_/\\__/_/ /_/\n' +
+        '                                 /____/'                          
+     
 }
