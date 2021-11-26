@@ -1,0 +1,8 @@
+mas auction1 {
+	
+	agent bob: auctioneer.asl
+	
+	agent partecipant: partecipant.asl {
+		instances: 4
+	}
+}

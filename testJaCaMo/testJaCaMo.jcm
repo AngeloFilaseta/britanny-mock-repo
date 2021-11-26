@@ -166,8 +166,8 @@ mas testJaCaMo {
     }*/
     
     /*Seventh Example*/
-    agent coordinator : coordinator.asl
+    /*agent coordinator : coordinator.asl
     
-    agent greeter : greeter.asl
+    agent greeter : greeter.asl*/
 
 }
