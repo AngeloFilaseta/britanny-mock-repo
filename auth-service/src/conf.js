@@ -1,7 +1,5 @@
 module.exports = {
-    dbAddress: 'mongodb://database:27017/brittany_auth',
     testDbAddress: 'mongodb://127.0.0.1/brittany_auth',
-    servicePort: 8080,
     asciiArt: 
         '    ____       _ __  __                                   __  __\n' +
         '   / __ )_____(_) /_/ /_____ _____  __  __   ____ ___  __/ /_/ /_\n' +
