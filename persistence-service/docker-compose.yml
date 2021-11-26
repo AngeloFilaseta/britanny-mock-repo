@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  persistence:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: persistence
+  database:
+    image: mongo
+    volumes:
+      - database_data:/data/db
+
+volumes:
+  database_data:

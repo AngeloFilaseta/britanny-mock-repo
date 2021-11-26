@@ -1,9 +1,12 @@
 
 #include <Arduino.h>
 #include <unity.h>
+#include <DigitalLight.h>
+
+#define LIGHT_PIN LED_BUILTIN
 
 void assert_light_state(int digitalValue) {
-    TEST_ASSERT_EQUAL(digitalValue, digitalRead(LED_BUILTIN));
+    TEST_ASSERT_EQUAL(digitalValue, digitalRead(LIGHT_PIN));
 }
 
 void test_is_on(){
@@ -14,17 +17,19 @@ void test_is_off(){
     assert_light_state(LOW);
 }
 
+DigitalLight digitalLight(LIGHT_PIN);
+
 void setup() {
     // NOTE!!! Wait for >2 secs
     // if board doesn't support software reset via Serial.DTR/RTS
     delay(2000);
-    Serial.begin(115200);
-    pinMode(LED_BUILTIN, OUTPUT);
-    digitalWrite(LED_BUILTIN, LOW);
+    digitalLight.off();
     UNITY_BEGIN();
     RUN_TEST(test_is_off);
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalLight.on();
     RUN_TEST(test_is_on);
+    digitalLight.off();
+    RUN_TEST(test_is_off);
     UNITY_END();
 }
 
