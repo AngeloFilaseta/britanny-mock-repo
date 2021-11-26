@@ -10,14 +10,9 @@ tasks.npmInstall{
   }
 }
 
-/*tasks.register<NodeTask>("run"){
+tasks.register<NodeTask>("run"){
   dependsOn(tasks.npmInstall)
   script.set(file("index.js"))
-}*/
-
-tasks.register<Exec>("run"){
-  dependsOn(tasks.npmInstall)
-  commandLine("PORT=8080", "DB=mongodb://127.0.0.1/brittany_persistence", "node", "index.js")
 }
 
 tasks.register<NodeTask>("test"){
