@@ -27,3 +27,15 @@ tasks.register<NpmTask>("test"){
   dependsOn(tasks.named("kill"))
   npmCommand.set(listOf("run", "test", "--"))
 }
+
+tasks.register<Exec>("dockerUp"){
+  commandLine("docker-compose", "up", "-d", "--build")
+}
+
+tasks.register<Exec>("dockerDown"){
+  commandLine("docker-compose", "down")
+}
+
+tasks.register<Exec>("dockerLog"){
+  commandLine("docker-compose", "logs", "-f", "web_client")
+}

@@ -1,15 +1,17 @@
 version: '3'
 
 services:
-  persistence:
+  auth:
     build:
       context: .
       dockerfile: Dockerfile
-    image: persistence
+    image: auth
   database:
     image: mongo
     volumes:
       - database_data:/data/db
+    logging:
+      driver: none
 
 volumes:
   database_data:

@@ -1,6 +1,6 @@
 version: '3'
 
 services:
-  persistence:
+  auth:
     ports:
-      - 80:80
+      - 81:80

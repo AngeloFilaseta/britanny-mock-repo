@@ -1,4 +1,6 @@
 FROM node:alpine
-COPY . .
+COPY package.json .
+COPY package-lock.json .
 RUN	npm install --silent
-CMD node index.js
+COPY . .
+CMD PORT=80 DB=mongodb://database:27017/brittany_persistence node index.js

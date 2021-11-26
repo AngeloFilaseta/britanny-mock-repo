@@ -1,6 +1,6 @@
 version: '3'
 
 services:
-  persistence:
+  web_client:
     ports:
-      - 80:80
+      - 3000:3000
