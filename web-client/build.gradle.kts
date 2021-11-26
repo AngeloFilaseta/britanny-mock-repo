@@ -35,3 +35,7 @@ tasks.register<Exec>("dockerUp"){
 tasks.register<Exec>("dockerDown"){
   commandLine("docker-compose", "down")
 }
+
+tasks.register<Exec>("dockerLog"){
+  commandLine("docker-compose", "logs", "-f", "web_client")
+}
