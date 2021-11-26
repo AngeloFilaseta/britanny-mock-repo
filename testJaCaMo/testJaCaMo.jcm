@@ -137,7 +137,7 @@ mas testJaCaMo {
     }*/
     
     /*Sixth Example*/
-    agent francois : helloCooperative.asl {
+    /*agent francois : helloCooperative.asl {
     	focus: jacamo.gui
     }
     agent maria : helloCooperative.asl {
@@ -163,5 +163,11 @@ mas testJaCaMo {
     		         alice    rs
     	}
     	scheme hello_eng: hello_sch        // instance scheme (hello_eng) from spec hello_sch
-    }
+    }*/
+    
+    /*Seventh Example*/
+    agent coordinator : coordinator.asl
+    
+    agent greeter : greeter.asl
+
 }
