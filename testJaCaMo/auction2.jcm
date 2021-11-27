@@ -1,0 +1,14 @@
+mas auction2 {
+	agent bob: auctioneer2.asl
+	
+	agent alice: partecipant2.asl
+	agent maria: partecipant2.asl
+	agent francois: partecipant2.asl
+	agent giacomo: partecipant2.asl
+	
+	workspace market_place {
+		artifact auction: auction.AuctionArtifact() { //dovrebbe istanziarlo qui chiamando init()
+			focused-by: bob, alice, maria, francois, giacomo
+		} 
+	}
+}
