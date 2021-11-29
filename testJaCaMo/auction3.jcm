@@ -1,0 +1,16 @@
+mas auction3 {
+	agent bob: auctioneer3.asl {
+		goals: start(a1, "flight_ticket(paris,athens,15/12/2015)")
+			   start(a2, "flight_ticket(athens,paris,18/12/2015)")
+	}
+	
+	agent alice: partecipant3.asl
+	agent maria: partecipant3.asl
+	agent francois: partecipant3.asl
+	agent giacomo: partecipant3.asl
+	
+	workspace market_place {
+		agents: bob, alice, maria, francois, giacomo // these agents will join the workspace
+		// the artifact is now created by bob on demand (one for each start goal)
+	}
+}

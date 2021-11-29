@@ -1,5 +1,5 @@
 mas auction2 {
-	agent bob: auctioneer2.asl
+	agent bob: auctioneer2.asl 
 	
 	agent alice: partecipant2.asl
 	agent maria: partecipant2.asl
@@ -9,6 +9,9 @@ mas auction2 {
 	workspace market_place {
 		artifact auction: auction.AuctionArtifact() { //dovrebbe istanziarlo qui chiamando init()
 			focused-by: bob, alice, maria, francois, giacomo
-		} 
+		}
 	}
+	//nel prossimo esempio vediamo come renderlo più flessibile, visto che in questo caso 
+	//il numero di artefatti dipendono da come sono definiti in questo file. 
+	//possiamo fare in modo che ne vengano costruiti N su richiesta di Bob.
 }

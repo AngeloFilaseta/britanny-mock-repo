@@ -15,7 +15,7 @@
 mas testJaCaMo {
 
 	/*First example*/
-    /*agent francois : hello.asl {
+    agent francois : hello.asl {
     	beliefs: message("Bonjour")
     }
     
@@ -28,7 +28,7 @@ mas testJaCaMo {
     }
     
     //what is going to happen in this case?
-    agent ateo : hello.asl*/
+    agent ateo : hello.asl
     
 	/*Second Example*/	
 	/*agent francois : hello2.asl {
