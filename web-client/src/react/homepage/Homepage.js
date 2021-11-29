@@ -31,7 +31,7 @@ export default function Homepage() {
           console.log(result)
         })
       }}>Value exists</Button>
-      <p>{persistenceService}</p>
+      <p>{JSON.stringify(process.env)}</p>
     </>
   )
   
