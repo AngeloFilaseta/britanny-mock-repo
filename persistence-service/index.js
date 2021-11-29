@@ -1,9 +1,8 @@
 var mongoose = require('mongoose')
 const server = require("./src/server")
 var conf = require('./src/conf')
-require('dotenv').config()
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 80
 const db = process.env.DB || 'mongodb://127.0.0.1/brittany_persistence'
 
 mongoose
