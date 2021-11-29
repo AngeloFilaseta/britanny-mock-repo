@@ -5,6 +5,7 @@ import RedirectButton from '../_common/navigation/RedirectButton'
 
 import Button from 'react-bootstrap/Button'
 import $ from 'jquery'
+import { persistenceService } from '../../conf'
 
 export default function Homepage() {
 
@@ -20,8 +21,7 @@ export default function Homepage() {
         onClick={() => setGoToAuth(true)}
       />
       <Button onClick={() => {
-        // http://localhost:80/temperature/exists?value=69
-        $.get("https://brittany-persistence-service.herokuapp.com:443/temperature/exists?value=69")
+        $.get(persistenceService + "/temperature/exists?value=69")
         .done(function (result) {
             console.log("success")
             console.log(result)
