@@ -8,10 +8,8 @@ const db = process.env.DB || 'mongodb://127.0.0.1/brittany_persistence'
 mongoose
     .connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
-        console.log("DB is connected!")
         server.listen(+port, () => {
             console.log(conf.asciiArt)
-            console.log(`Listening on port ${port}`)
         })
     })
     .catch(err => {
