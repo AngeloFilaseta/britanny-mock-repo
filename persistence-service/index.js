@@ -4,13 +4,9 @@ var conf = require('./src/conf')
 require('dotenv').config()
 
 const port = process.env.PORT || 8080
-const db = 'mongodb+srv://admin:EtqjqcSGgIJsrHNS@persistence.u2eib.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const db = process.env.DB || 'mongodb://127.0.0.1/brittany_persistence'
 
-console.log("LA VARIABILE TEST: " + process.env.TEST)
-if(db === null || db === undefined){
-    throw ("Variable db is null")
-} else {
-    mongoose
+mongoose
     .connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         console.log("DB is connected!")
@@ -23,4 +19,3 @@ if(db === null || db === undefined){
         console.log("Error connecting to DB " + db)
         console.log("DB connection:\n", err.message)
     })
-}
