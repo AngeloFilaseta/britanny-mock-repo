@@ -20,7 +20,8 @@ export default function Homepage() {
         onClick={() => setGoToAuth(true)}
       />
       <Button onClick={() => {
-        $.get("https://brittany-persistence-service.herokuapp.com:443/temperature/exists", JSON.stringify({value: 69}))
+        // http://localhost:80/temperature/exists?value=69
+        $.get("https://brittany-persistence-service.herokuapp.com:443/temperature/exists?value=69")
         .done(function (result) {
             console.log("success")
             console.log(result)

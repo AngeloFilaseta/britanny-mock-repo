@@ -1,4 +1,6 @@
 module.exports = {
+    clientAddress: 'http://localhost',
+    clientPort: 3000,
     testDbAddress: 'mongodb://127.0.0.1/brittany_persistence_test',
     asciiArt: 
         '######\n' +                                                                                                                                                                   
