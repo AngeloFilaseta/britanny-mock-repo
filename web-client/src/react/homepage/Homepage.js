@@ -3,6 +3,9 @@ import { useState } from 'react'
 import ExampleTextProps from '../_common/ExampleTextProps'
 import RedirectButton from '../_common/navigation/RedirectButton'
 
+import Button from 'react-bootstrap/Button'
+import $ from 'jquery'
+
 export default function Homepage() {
 
   const [goAuth, setGoToAuth] = useState(false)
@@ -16,6 +19,17 @@ export default function Homepage() {
         destination={""}
         onClick={() => setGoToAuth(true)}
       />
+      <Button onClick={() => {
+        $.post("https://brittany-persistence-service.herokuapp.com:443/temperature/exists", JSON.stringify({value: 72}))
+        .done(function (result) {
+            console.log("success")
+            console.log(result)
+        })
+        .fail(function (result) {
+          console.log("fail")
+          console.log(result)
+        })
+      }}>Value exists</Button>
     </>
   )
   
