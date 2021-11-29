@@ -13,7 +13,7 @@ router.post("/temperature/save", (req, res) => {
 })
 
 router.get("/temperature/exists", async function(req, res){
-    console.log("ricevuta richiesta su exists")
+    console.log(req)
     if(req.body.value === null || req.body.value === undefined || isNaN(req.body.value)){
         res.status(406).json({err: "Some argument is not valid"})
     } else {
