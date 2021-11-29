@@ -1,7 +1,7 @@
 const cors = require('cors')
 var conf = require('../conf')
 
-let whitelist = [conf.webClientAddress + ":" + conf.webClientPort]
+let whitelist = [conf.webClientAddress]
 
 const corsOptions = {
     origin: function(origin, callback){
