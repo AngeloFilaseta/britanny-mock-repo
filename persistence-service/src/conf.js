@@ -1,7 +1,9 @@
 module.exports = {
-    clientAddress: 'http://localhost',
-    clientPort: 3000,
+    serverPort: process.env.PORT || 80,
+    dbAddress: process.env.DB || 'mongodb://127.0.0.1/brittany_persistence',
     testDbAddress: 'mongodb://127.0.0.1/brittany_persistence_test',
+    webClientAddress: process.env.WEB_CLIENT_ADDRESS || 'http://localhost',
+    webClientPort: process.env.WEB_CLIENT_PORT || 3000,
     asciiArt: 
         '######\n' +                                                                                                                                                                   
         '#     # #####  # ##### #####   ##   #    # #   #    #####  ###### #####   ####  #  ####  ##### ###### #    #  ####  ######\n' +
