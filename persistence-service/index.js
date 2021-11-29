@@ -3,8 +3,8 @@ const server = require("./src/server")
 var conf = require('./src/conf')
 require('dotenv').config()
 
-const port = process.env.PORT
-const db = process.env.DB
+const port = 80
+const db = 'mongodb+srv://admin:EtqjqcSGgIJsrHNS@persistence.u2eib.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 if(port === null || port === undefined || isNaN(port) || !Number.isInteger(+port) || +port < 0){
     throw ("Invalid port")
