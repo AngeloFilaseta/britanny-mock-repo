@@ -1,0 +1,19 @@
+mas auction4 {
+
+    agent bob : auctioneer4.asl
+
+    agent alice : partecipant4.asl
+    agent maria : partecipant4.asl
+    agent francois : partecipant4.asl
+    agent giacomo : partecipant4.asl
+
+    organisation aorg : auction_org.xml {
+        group agrp : auctionGroup {
+            players: bob auctioneer
+                     alice participant
+                     maria participant
+                     francois participant
+                     giacomo participant
+        }
+    }
+}
