@@ -1,8 +1,7 @@
 #include <Arduino.h>
 #include <unity.h>
 #include <DigitalLight.h>
-
-#define LIGHT_PIN LED_BUILTIN
+#include "../Util.h"
 
 void assert_light_state(int digitalValue) {
     TEST_ASSERT_EQUAL(digitalValue, digitalRead(LIGHT_PIN));
