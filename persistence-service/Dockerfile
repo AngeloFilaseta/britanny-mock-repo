@@ -4,4 +4,3 @@ COPY package-lock.json .
 RUN	npm install --silent
 COPY . .
 CMD node index.js
-EXPOSE 8080
