@@ -31,6 +31,8 @@ export default function Homepage() {
           console.log(result)
         })
       }}>Value exists</Button>
+      <p>{process.env.PERSISTENCE_SERVICE_ADDRESS}</p>
+      <p>{process.env.PERSISTENCE_SERVICE_PORT}</p>
     </>
   )
   
