@@ -15,6 +15,7 @@ if(port === null || port === undefined || isNaN(port) || !Number.isInteger(+port
     .connect(db, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         console.log("DB is connected!")
+        server.set('port', port)
         server.listen(+port, () => {
             console.log(conf.asciiArt)
             console.log(`Listening on port ${port}`)
