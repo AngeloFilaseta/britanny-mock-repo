@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <unity.h>
 #include "API.h"
+#include "../Util.h"
 
 int test_value = 0;
 
@@ -11,9 +12,7 @@ void handler() {
 API api = API("/api/test", handler);
 
 void test_path_name() {
-    char result[10];
-    api.path().toCharArray(result, 10);
-    TEST_ASSERT_EQUAL_STRING("/api/test", result);
+    assert_equal_string("/api/test", api.path());
 }
 
 void test_handler_working() {
