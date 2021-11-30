@@ -2,7 +2,7 @@ name: Push Persistence Service Container to Heroku
 
 on:
   workflow_run:
-    workflows: ["Test persistence service", "Test web client"]
+    workflows: ["Test persistence service"]
     branches:
       - master
     types:
@@ -11,6 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     defaults:
       run:
         working-directory: ./persistence-service
