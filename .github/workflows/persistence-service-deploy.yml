@@ -1,12 +1,12 @@
 name: Push Persistence Service Container to Heroku
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Test persistence service"]
     branches:
       - master
-  pull_request:
-    branches:
-      - master
+    types:
+      - completed
 
 jobs:
   build:
