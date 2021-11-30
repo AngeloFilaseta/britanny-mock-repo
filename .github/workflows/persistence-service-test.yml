@@ -11,6 +11,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+
     defaults:
       run:
         working-directory: ./persistence-service
@@ -20,10 +24,10 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Use Node.js 16.x
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
-        node-version: '16'
+        node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: persistence-service/package-lock.json
     - name: Start MongoDB v4.2
