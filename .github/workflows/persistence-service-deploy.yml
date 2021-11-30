@@ -1,6 +1,12 @@
 name: Push Persistence Service Container to Heroku
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
