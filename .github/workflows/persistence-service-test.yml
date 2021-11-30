@@ -7,13 +7,14 @@ on:
     branches: [ '**' ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
+        mongodb-version: [3.6, 4.0, 4.2]
 
     defaults:
       run:
@@ -30,9 +31,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: persistence-service/package-lock.json
-    - name: Start MongoDB v4.2
+    - name: Start MongoDB v${{ matrix.mongodb-version }}
       uses: supercharge/mongodb-github-action@1.2.0
       with:
-        mongodb-version: '4.2'
+        mongodb-version: ${{ matrix.mongodb-version }}
     - run: npm install
     - run: npm test
