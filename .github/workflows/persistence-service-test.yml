@@ -25,6 +25,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Use Node.js ${{ matrix.node-version }}
+      working-directory: ./persistence-service
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
