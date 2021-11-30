@@ -9,9 +9,8 @@ afterAll((done) => db.dropConnectedTestDB(done))
 test("Checking for a temperature existence with NaN value", async () =>{
   await supertest(server)
     .get("/temperature/exists")
-    .send({value: "wrong"})
+    .query({value: "wrong"})
     .set('Accept', 'application/json')
-    .expect('Content-Type', /json/)
     .expect(406)
 })
 
@@ -34,7 +33,7 @@ test("Checking for a temperature existence of a just written temperature", async
 
   await supertest(server)
     .get("/temperature/exists")
-    .send({value: 420})
+    .query({value: 420})
     .set('Accept', 'application/json')
     .expect('Content-Type', /json/)
     .expect(200)
@@ -45,7 +44,7 @@ test("Checking for a temperature existence of a just written temperature", async
 test("Checking for a temperature existence on non-existing temperature", async () => {
   await supertest(server)
     .get("/temperature/exists")
-    .send({value: 420})
+    .query({value: 420})
     .set('Accept', 'application/json')
     .expect('Content-Type', /json/)
     .expect(200)
