@@ -1,12 +1,12 @@
 name: Push Web Client Container to Heroku
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Test persistence service", "Test web client"]
     branches:
       - master
-  pull_request:
-    branches:
-      - master
+    types:
+      - completed
 
 jobs:
   build:
