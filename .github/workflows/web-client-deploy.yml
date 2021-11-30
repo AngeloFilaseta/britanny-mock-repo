@@ -1,4 +1,4 @@
-name: Push Container to Heroku
+name: Push Web Client Container to Heroku
 
 on: [push]
 
@@ -14,11 +14,11 @@ jobs:
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:login
-    - name: Build and push
+    - name: Build container and push
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web 
-    - name: Release
+    - name: Release container
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
