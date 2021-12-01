@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <LinkedList.h>
 #include "../EdgeModel.h"
-#include "ModuleModel.h"
+#include "../module/ModuleModel.h"
 
 class EdgeModelSingleton {
     static EdgeModelSingleton *instance;

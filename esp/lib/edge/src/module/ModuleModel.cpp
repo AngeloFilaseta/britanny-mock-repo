@@ -1,5 +1,5 @@
 #include "ModuleModel.h"
-#include "HwComponent.h"
+#include "../HwComponent.h"
 
 ModuleModel::ModuleModel(HwComponent *component) {
     _component = component;

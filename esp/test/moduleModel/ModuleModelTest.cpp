@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <unity.h>
-#include "ModuleModel.h"
+#include "module/ModuleModel.h"
 #include "../Util.h"
 #include "DigitalLight.h"
 

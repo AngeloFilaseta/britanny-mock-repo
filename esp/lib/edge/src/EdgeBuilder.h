@@ -2,7 +2,7 @@
 #define __EDGE_BUILDER__
 
 #include "Edge.h"
-#include "EdgeModule.h"
+#include "module/EdgeModule.h"
 
 class EdgeBuilder {
 

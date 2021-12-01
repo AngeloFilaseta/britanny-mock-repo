@@ -3,10 +3,10 @@
 #include <LinkedList.h>
 #include "../Util.h"
 #include "DigitalLight.h"
-#include "ModuleModel.h"
+#include "module/ModuleModel.h"
 #include "API.h"
 #include "EdgeModel.h"
-#include "EdgeModule.h"
+#include "module/EdgeModule.h"
 #include "Edge.h"
 #include "EdgeBuilder.h"
 

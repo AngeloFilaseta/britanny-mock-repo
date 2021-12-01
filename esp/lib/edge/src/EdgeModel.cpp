@@ -1,6 +1,6 @@
 #include <LinkedList.h>
 #include "EdgeModel.h"
-#include "ModuleModel.h"
+#include "module/ModuleModel.h"
 #include <microTuple.h>
 
 EdgeModel::EdgeModel(LinkedList<MicroTuple<String, ModuleModel*>>* models) {

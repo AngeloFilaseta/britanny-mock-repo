@@ -2,7 +2,7 @@
 #include <unity.h>
 #include <LinkedList.h>
 #include "HwComponent.h"
-#include "ModuleModel.h"
+#include "module/ModuleModel.h"
 #include "microTuple.h"
 #include "singleton/EdgeModelSingleton.h"
 

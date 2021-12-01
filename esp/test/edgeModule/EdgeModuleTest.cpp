@@ -4,7 +4,7 @@
 #include "../Util.h"
 #include "DigitalLight.h"
 #include "API.h"
-#include "EdgeModule.h"
+#include "module/EdgeModule.h"
 
 DigitalLight* testComponent = new DigitalLight(LIGHT_PIN);
 ModuleModel* testModuleModel= new ModuleModel(testComponent);

@@ -2,7 +2,7 @@
 #include <unity.h>
 #include <LinkedList.h>
 #include <microTuple.h>
-#include "ModuleModel.h"
+#include "module/ModuleModel.h"
 #include "DigitalLight.h"
 #include "EdgeModel.h"
 #include "../Util.h"

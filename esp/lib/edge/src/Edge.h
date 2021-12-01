@@ -4,7 +4,7 @@
 #include <LinkedList.h>
 #include "API.h"
 #include "EdgeModel.h"
-#include "EdgeModule.h"
+#include "module/EdgeModule.h"
 
 class Edge {
 

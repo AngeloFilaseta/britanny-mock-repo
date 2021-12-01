@@ -1,5 +1,5 @@
 #include "Edge.h"
-#include "EdgeModule.h"
+#include "module/EdgeModule.h"
 #include <Arduino.h>
 #include <LinkedList.h>
 #include <microTuple.h>

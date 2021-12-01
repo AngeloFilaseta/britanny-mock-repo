@@ -2,7 +2,7 @@
 #include <Arduino.h>
 #include <LinkedList.h>
 #include "Edge.h"
-#include "EdgeModule.h"
+#include "module/EdgeModule.h"
 
 EdgeBuilder::EdgeBuilder() {
     modules = new LinkedList<EdgeModule*>();

@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <LinkedList.h>
 #include "ModuleModel.h"
-#include "API.h"
+#include "../API.h"
 
 class EdgeModule {
 

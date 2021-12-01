@@ -2,7 +2,7 @@
 #include <Arduino.h>
 #include <LinkedList.h>
 #include "ModuleModel.h"
-#include "API.h"
+#include "../API.h"
 
 EdgeModule::EdgeModule(String id, ModuleModel* moduleModel, LinkedList<API*>* moduleApis) {
     _id = id;

@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <microTuple.h>
 #include "API.h"
-#include "ModuleModel.h"
+#include "module/ModuleModel.h"
 
 class EdgeModel {
 
