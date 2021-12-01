@@ -2,7 +2,7 @@
 #include <unity.h>
 #include <LinkedList.h>
 #include "../Util.h"
-#include "DigitalLight.h"
+#include "hw/DigitalLight.h"
 #include "API.h"
 #include "module/EdgeModule.h"
 

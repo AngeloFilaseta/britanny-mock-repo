@@ -2,7 +2,7 @@
 #include <unity.h>
 #include "module/ModuleModel.h"
 #include "../Util.h"
-#include "DigitalLight.h"
+#include "hw/DigitalLight.h"
 
 DigitalLight* light = new DigitalLight(LIGHT_PIN);
 ModuleModel moduleModel = ModuleModel(light);

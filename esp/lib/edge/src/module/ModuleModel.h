@@ -1,7 +1,7 @@
 #ifndef __MODULE_MODEL__
 #define __MODULE_MODEL__
 
-#include "../HwComponent.h"
+#include "../hw/HwComponent.h"
 
 class ModuleModel {
 

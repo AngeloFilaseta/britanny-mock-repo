@@ -3,7 +3,7 @@
 #include <LinkedList.h>
 #include <microTuple.h>
 #include "module/ModuleModel.h"
-#include "DigitalLight.h"
+#include "hw/DigitalLight.h"
 #include "EdgeModel.h"
 #include "../Util.h"
 

@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <unity.h>
 #include <LinkedList.h>
-#include "HwComponent.h"
+#include "hw/HwComponent.h"
 #include "module/ModuleModel.h"
 #include "microTuple.h"
 #include "singleton/EdgeModelSingleton.h"
