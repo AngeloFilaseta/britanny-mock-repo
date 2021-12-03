@@ -11,7 +11,7 @@ rootProject.name = "britanny-mock-repo"
 
 include("auth-service")
 include("broker")
-include("esp")
+include("seriousESP")
 include("persistence-service")
 include("testJaCaMo")
 include("web-client")
