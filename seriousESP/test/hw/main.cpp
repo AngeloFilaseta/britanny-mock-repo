@@ -1,8 +1,10 @@
 #include <unity.h>
 #include "ComponentHwTest.h"
+#include "SinglePingHwTest.h"
 
 int main(){
     UNITY_BEGIN();
-    RUN_TEST(test_ComponentHw); //ComponentHwTest
+    test_ComponentHw(); //ComponentHwTest
+    test_SinglePinHw(); //SinglePinHwTest
     UNITY_END();
 }
