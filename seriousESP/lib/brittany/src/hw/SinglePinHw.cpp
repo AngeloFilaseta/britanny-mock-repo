@@ -1,4 +1,3 @@
-
 #include "SinglePinHw.h"
 
 SinglePinHw::SinglePinHw(std::string id, uint8_t pin): ComponentHw(id) {
