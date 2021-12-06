@@ -2,19 +2,18 @@
 #define BRITTANY_DIGITAL_LIGHT_HW_TEMPLATE_H
 
 #include <string>
-#include "SinglePinHw.h"
+#include "../interface/HasOnePin.h"
 
-class DigitalLightHwTemplate : public SinglePinHw {
+class DigitalLightHwTemplate : public ComponentHw, public HasOnePin, public Switchable {
 
 public:
 
-    DigitalLightHwTemplate(std::string id, uint8_t pin) : SinglePinHw(id, pin) { };
+    DigitalLightHwTemplate(std::string id, uint8_t pin) :
+        ComponentHw(id),
+        HasSinglePin(pin),
+        Switchable() {
 
-    virtual void on() = 0;
-
-    virtual void off() = 0;
-
-    virtual bool isOn() = 0;
+    };
 
 };
 
