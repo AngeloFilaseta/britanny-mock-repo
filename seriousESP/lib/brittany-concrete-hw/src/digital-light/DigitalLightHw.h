@@ -1,13 +1,13 @@
 #ifndef BRITTANY_DIGITAL_LIGHT_HW_H
 #define BRITTANY_DIGITAL_LIGHT_HW_H
 
-#include "brittany-hw/src/SinglePinHw.h"
+#include "digital-light/DigitalLightHwTemplate.h"
 
-class DigitalLightHwTemplate : public SinglePinHw {
+class DigitalLightHw : public DigitalLightHwTemplate {
 
 public:
 
-    DigitalLightHwTemplate(std::string id, uint8_t pin);
+    DigitalLightHw(std::string id, uint8_t pin);
 
     void on();
 

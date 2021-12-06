@@ -1,18 +1,19 @@
 #include "DigitalLightHw.h"
 #include <Arduino.h>
 
-DigitalLightHwTemplate::DigitalLightHwTemplate(std::string id, uint8_t pin) : SinglePinHw(id, pin) {
+DigitalLightHw::DigitalLightHw(std::string id, uint8_t pin) : DigitalLightHwTemplate(id, pin) {
     pinMode(pin, OUTPUT);
 }
 
-void DigitalLightHwTemplate::on() {
+void DigitalLightHw::on() {
     digitalWrite(pin(), HIGH);
 }
 
-void DigitalLightHwTemplate::off() {
+void DigitalLightHw::off() {
     digitalWrite(pin(), LOW);
 }
 
-bool DigitalLightHwTemplate::isOn() {
+bool DigitalLightHw::isOn() {
     return digitalRead(pin()) == HIGH;
 }
+

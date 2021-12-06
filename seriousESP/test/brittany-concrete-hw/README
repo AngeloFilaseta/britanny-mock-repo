@@ -1,0 +1,7 @@
+Tests inside "britanny-concrete-hw" needs a real ESP8266 to execute.
+
+The purpose of this file is to lists all the pin mapping so that it is simple to test the system.
+A smarter way to do this? TODO.
+
+DigitalLightHwTest:
+- no connection needed as the on-board led is used.
