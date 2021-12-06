@@ -16,4 +16,5 @@ private:
     uint8_t _pin;
 
 };
+
 #endif //BRITTANY_SINGLE_PIN_COMPONENTHW_H

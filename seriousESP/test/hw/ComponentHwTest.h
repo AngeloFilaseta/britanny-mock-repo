@@ -1,5 +1,5 @@
 #include <unity.h>
-#include "hw/ComponentHw.h"
+#include "ComponentHw.h"
 
 #define HW_ID "component"
 

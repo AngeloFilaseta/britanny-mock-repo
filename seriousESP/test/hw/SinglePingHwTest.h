@@ -1,5 +1,5 @@
 #include <unity.h>
-#include "hw/SinglePinHw.h"
+#include "SinglePinHw.h"
 
 #define SINGLE_PIN_ID "single_pin"
 #define SINGLE_PIN_PIN 10
