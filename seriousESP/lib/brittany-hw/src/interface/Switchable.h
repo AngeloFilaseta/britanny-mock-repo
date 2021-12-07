@@ -1,5 +1,5 @@
-#ifndef BRITTANY_ON_OFF_HW_TEMPLATE_H
-#define BRITTANY_ON_OFF_HW_TEMPLATE_H
+#ifndef BRITTANY_SWITCHABLE_H
+#define BRITTANY_SWITCHABLE_H
 
 class Switchable {
 
@@ -13,4 +13,4 @@ public:
 
 };
 
-#endif //BRITTANY_ON_OFF_HW_TEMPLATE_H
+#endif //BRITTANY_SWITCHABLE_H
