@@ -6,7 +6,7 @@
 #include "../interface/HasOnePin.h"
 #include "../interface/Switchable.h"
 
-class DigitalLightHwTemplate : public ComponentHw, public Switchable, public HasOnePin {
+class DigitalLightHwTemplate : public ComponentHw, public HasOnePin, public Switchable {
 
 public:
 
