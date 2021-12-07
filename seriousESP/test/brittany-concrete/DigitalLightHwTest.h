@@ -1,6 +1,6 @@
 #include <unity.h>
 #include <Arduino.h>
-#include "hw/digital-light/DigitalLightHw.h"
+#include "digital-light/DigitalLightHw.h"
 
 #define ON_OFF_TEST_ATTEMPT 10
 
