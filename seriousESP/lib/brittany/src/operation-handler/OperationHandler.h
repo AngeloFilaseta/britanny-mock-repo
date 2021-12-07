@@ -13,7 +13,7 @@ public:
 
     std::string path();
 
-    OperationHandlerResult handle(Json::Value args); // =0
+    virtual OperationHandlerResult handle(Json::Value args) = 0;
 
 private:
 
