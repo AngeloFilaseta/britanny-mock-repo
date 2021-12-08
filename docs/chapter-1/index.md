@@ -7,7 +7,7 @@ nav_order: 2
 # Ubiquitous Language
 
 ## Agricoltore
-Persona proprietaria della [Serra]() o collaboratore autorizzato.
+Persona proprietaria della [Serra](#serra) o collaboratore autorizzato.
 
 ## Pianta 
 Unità vegetale contenuta all'interno di un [Ambiente](#ambiente) della[Serra](#serra).
