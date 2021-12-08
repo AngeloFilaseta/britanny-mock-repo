@@ -1,0 +1,4 @@
+
+mas brittany {
+	agent samplingAgent : samplingAgent.asl
+}

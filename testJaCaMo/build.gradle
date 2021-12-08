@@ -58,7 +58,7 @@ task run (type: JavaExec, dependsOn: 'classes') {
         mkdir 'log'
     }
     main 'jacamo.infra.JaCaMoLauncher'
-    args 'testJaCaMo.jcm'
+    args 'brittany.jcm'
     classpath sourceSets.main.runtimeClasspath
 }
 
