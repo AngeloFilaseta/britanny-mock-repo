@@ -16,6 +16,7 @@ public class SamplingArtifact extends Artifact {
 	private Map<String, Integer> currentSamples;
 	private Optional<Map<String, Integer>> lastSamples;
 	private Map<String, Integer> deltaDevices;
+	private Map<String, Pair<Integer, Integer>> thresholds;
 	
 	void init() { }
 	
@@ -24,8 +25,11 @@ public class SamplingArtifact extends Artifact {
 		this.currentSamples = new HashMap<>();
 		this.lastSamples = Optional.empty();
 		this.deltaDevices = new HashMap<>();
-		System.out.println("Init" + devices);
-		devices.forEach(d -> deltaDevices.put(d, 5000));
+		this.thresholds = new HashMap<>();
+		devices.forEach(d -> currentSamples.put(d, new Random().nextInt()));
+		System.out.println("Init " + devices);
+		devices.forEach(d -> deltaDevices.put(d, 200000));
+		devices.forEach(d -> this.thresholds.put(d, new Pair<>(100000,500000)));
 	}
 	
 	@OPERATION void sampleOperation() {
@@ -42,9 +46,12 @@ public class SamplingArtifact extends Artifact {
 			//TODO mandare dati su db o reperire l'ultima entry su db e controllarla?
 		} else {
 			System.out.println("Last samples " + this.lastSamples + "\n Current samples " + this.currentSamples);
-			lastSamples.get().forEach((k,v) -> {
-				if(Math.abs(currentSamples.get(k) - v) > this.deltaDevices.get(k)) {
-					System.out.println("Carica su db!");
+			currentSamples.forEach((k,v) -> {
+				if(Math.abs(v - lastSamples.get().get(k)) > this.deltaDevices.get(k)) {
+					System.out.println("Carica su db!");				
+					if(v > this.thresholds.get(k).getY() || v < this.thresholds.get(k).getX()) {
+						System.out.println("Create out of range behavior");
+					}
 				}
 				
 			});
