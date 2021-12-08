@@ -7,16 +7,31 @@
 
 
 
-set(CMAKE_CONFIGURATION_TYPES "nodemcuv2" CACHE STRING "Build Types reflect PlatformIO Environments" FORCE)
+set(CMAKE_CONFIGURATION_TYPES "nodemcuv2;native;" CACHE STRING "Build Types reflect PlatformIO Environments" FORCE)
 
 
-SET(CMAKE_C_COMPILER "$ENV{HOME}/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-gcc")
-SET(CMAKE_CXX_COMPILER "$ENV{HOME}/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-g++")
-SET(CMAKE_CXX_FLAGS "-fno-rtti -std=gnu++17 -fno-exceptions -Os -mlongcalls -mtext-section-literals -falign-functions=4 -U__STRICT_ANSI__ -D_GNU_SOURCE -ffunction-sections -fdata-sections -Wall -Werror=return-type -free -fipa-pta")
-SET(CMAKE_C_FLAGS "-std=gnu17 -Wpointer-arith -Wno-implicit-function-declaration -Wl,-EL -fno-inline-functions -nostdlib -Os -mlongcalls -mtext-section-literals -falign-functions=4 -U__STRICT_ANSI__ -D_GNU_SOURCE -ffunction-sections -fdata-sections -Wall -Werror=return-type -free -fipa-pta")
+SET(CMAKE_C_COMPILER "/usr/bin/gcc")
+SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
+SET(CMAKE_CXX_FLAGS "")
+SET(CMAKE_C_FLAGS "")
 
-SET(CMAKE_C_STANDARD 17)
-set(CMAKE_CXX_STANDARD 17)
+
+if (CMAKE_BUILD_TYPE MATCHES "native")
+    add_definitions(-DPLATFORMIO=50203)
+
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/include")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/native/jsoncpp/include")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/native/jsoncpp/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/lib/brittany/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/lib/brittany-concrete/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/lib/brittany-hw/src")
+    include_directories("$ENV{HOME}/.platformio/packages/tool-unity")
+
+    FILE(GLOB_RECURSE EXTRA_LIB_SOURCES
+        ${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/native/*.*
+    )
+endif()
 
 if (CMAKE_BUILD_TYPE MATCHES "nodemcuv2")
     add_definitions(-DPLATFORMIO=50203)
@@ -40,11 +55,16 @@ if (CMAKE_BUILD_TYPE MATCHES "nodemcuv2")
 
     include_directories("${CMAKE_CURRENT_LIST_DIR}/include")
     include_directories("${CMAKE_CURRENT_LIST_DIR}/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/nodemcuv2/jsoncpp/include")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/nodemcuv2/jsoncpp/src")
     include_directories("$ENV{HOME}/.platformio/packages/framework-arduinoespressif8266/tools/sdk/include")
     include_directories("$ENV{HOME}/.platformio/packages/framework-arduinoespressif8266/cores/esp8266")
     include_directories("$ENV{HOME}/.platformio/packages/toolchain-xtensa/include")
     include_directories("$ENV{HOME}/.platformio/packages/framework-arduinoespressif8266/tools/sdk/lwip2/include")
     include_directories("$ENV{HOME}/.platformio/packages/framework-arduinoespressif8266/variants/nodemcu")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/lib/brittany/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/lib/brittany-concrete/src")
+    include_directories("${CMAKE_CURRENT_LIST_DIR}/lib/brittany-hw/src")
     include_directories("$ENV{HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ArduinoOTA")
     include_directories("$ENV{HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src")
     include_directories("$ENV{HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/EEPROM")
@@ -91,7 +111,6 @@ if (CMAKE_BUILD_TYPE MATCHES "nodemcuv2")
         ${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/nodemcuv2/*.*
     )
 endif()
-
 
 FILE(GLOB_RECURSE SRC_LIST
     ${CMAKE_CURRENT_LIST_DIR}/src/*.*
