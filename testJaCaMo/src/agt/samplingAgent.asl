@@ -4,15 +4,13 @@
 
 /* Initial goals */
 
-!start.
-
 /* Plans */
 
-+!start : true <- +wait.
-	
-+wait <- .at("now + 2 seconds", {+hello}).
++devices(D) <- initDevices(D); +wait.
 
-+hello <- .print("Hello"); -+wait.
++wait <- .at("now + 2 seconds", {+sample}).
+
++sample <- sampleOperation; -+wait.
 
 { include("$jacamoJar/templates/common-cartago.asl") }
 { include("$jacamoJar/templates/common-moise.asl") }

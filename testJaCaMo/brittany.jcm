@@ -1,4 +1,12 @@
 
 mas brittany {
-	agent samplingAgent : samplingAgent.asl
+	agent samplingAgent : samplingAgent.asl {
+		focus: brittany.common
+		focus: brittany.sampling
+	}
+	
+	workspace brittany {
+        artifact common: sampling.CommonArtifact()
+        artifact sampling: sampling.SamplingArtifact()
+    }
 }
