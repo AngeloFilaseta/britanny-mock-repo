@@ -10,13 +10,13 @@ nav_order: 2
 Persona proprietaria della [Serra](#serra) o collaboratore autorizzato.
 
 ## Pianta 
-Unità vegetale contenuta all'interno di un [Ambiente](#ambiente) della[Serra](#serra).
+Unità vegetale contenuta all'interno di un [Ambiente](#ambiente) della [Serra](#serra).
 
 ## Ambiente
 Sezione di una [Serra](#serra) che contiene più [Piante](#pianta). Una serra è composta da almeno un ambiente.
 
 ## Serra
-Stabile suddiviso in [Ambienti](#ambiente) adibito alla coltivazione di [Piante](#pianta) che richiedano la stessa [Configurazione dell'ambiente](#configurazione-dell'ambiente).
+Stabile suddiviso in [Ambienti](#ambiente) adibito alla coltivazione di [Piante](#pianta) che richiedano la stessa [Configurazione dell'ambiente](#configurazione-dellambiente).
 
 ## Famiglia
 Uno dei livelli di classificazione scientifica utilizzato dalle [Piante](#pianta). Piante con caratteristiche simili vengono solitamente racchiuse all'interno della stessa famiglia.
@@ -25,13 +25,13 @@ Uno dei livelli di classificazione scientifica utilizzato dalle [Piante](#pianta
 L'insieme ordinato di tutte le [Fasi fenologiche](#fase-fenologica) di una [Pianta](#pianta) che costituisce il suo percorso di vita.
 
 ## Fase Fenologica
-Stadio del [Ciclo vitale](#ciclo-vitale) delle [Piante](#pianta), associato ad una certa [Configurazione della pianta](#configurazione-della-pianta) e [dell'ambiente](#configurazione-dell'ambiente).
+Stadio del [Ciclo vitale](#ciclo-vitale) delle [Piante](#pianta), associato ad una certa [Configurazione della pianta](#configurazione-della-pianta) e [dell'ambiente](#configurazione-dellambiente).
 
 ## Parametro 
 Un valore impostato dall'[Agricoltore](#agricoltore) che il sistema utilizza per prendere decisioni su come comportarsi in modo autonomo.
 
 ## Configurazione
-Insieme di [Parametri](#parametro) impostati dall'[Agricoltore](#agricoltore) validi durante una determinata [Fase Fenologica](#fase-fenologica). Si possono suddividere in [Configurazione della pianta](#configurazione-della-pianta) e [Configurazione dell'ambiente](#configurazione-dell'ambiente).
+Insieme di [Parametri](#parametro) impostati dall'[Agricoltore](#agricoltore) validi durante una determinata [Fase Fenologica](#fase-fenologica). Si possono suddividere in [Configurazione della pianta](#configurazione-della-pianta) e [Configurazione dell'ambiente](#configurazione-dellambiente).
 
 ### Configurazione della Pianta
 Sottoinsieme di [Parametri](#parametro) relativi alla singola [Pianta](#pianta) in una determinata [Fase fenologica](#fase-fenologica). Nello specifico i parametri da specificare possono essere:
@@ -51,25 +51,25 @@ Un [Parametro](#parametro) della [Configurazione della Pianta](#configurazione-d
 ### Configurazione dell'Ambiente
 Sottoinsieme di [Parametri](#parametro) relativi al singolo [Ambiente](#ambiente). Nello specifico i parametri da specificare possono essere:
 
-- [Temperatura dell'aria](#temperatura-dell'aria)
-- [Umidità dell'aria](#umidità-dell'aria)
+- [Temperatura dell'aria](#temperatura-dellaria)
+- [Umidità dell'aria](#umidità-dellaria)
 - [Illuminazione artificiale](#illuminazione-artificiale)
 - [Ventilazione](#ventilazione)
-- [Composizione dell'aria](#composizione-dell'aria)
-- [Pressione dell'acqua](#pressione-dell'acqua)
+- [Composizione dell'aria](#composizione-dellaria)
+- [Pressione dell'acqua](#pressione-dellacqua)
 - [Sensori di movimento](#sensore-di-movimento)
 
 ### Temperatura dell'Aria
-Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dell'ambiente) che specifica i gradi centrigradi (C°) rilevati nell'aria all'interno dell'[Ambiente](#ambiente).
+Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dellambiente) che specifica i gradi centrigradi (C°) rilevati nell'aria all'interno dell'[Ambiente](#ambiente).
 È campionata attraverso Sensori e modificata attraverso attuatori.
 La temperatura dell'aria può essere regolata tramite un sistema di raffreddamento/riscaldamento.
 
 ### Umidità dell'Aria
-Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dell'ambiente) che specifica, attraverso sensoristica, la quantità di vapore acqueo presente nell'aria in percentuale all'interno dell'[Ambiente](#ambiente).
+Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dellambiente) che specifica, attraverso sensoristica, la quantità di vapore acqueo presente nell'aria in percentuale all'interno dell'[Ambiente](#ambiente).
 È campionata attraverso Sensori e modificata attraverso attuatori.
 
 ### Illuminazione Artificiale
-Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dell'ambiente) che permette di controllare:
+Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dellambiente) che permette di controllare:
 - [Temperatura colore](#temperatura-colore)
 - [Intensità](#intesità)
 - [Tempo Diurno](#tempo-diurno)
@@ -88,17 +88,17 @@ Una caratteristica controllabile dell'[Illuminazione Artificiale](#illuminazione
 Una caratteristica controllabile dell'[Illuminazione Artificiale](#illuminazione-artificiale) che misura il quantitativo di minuti in cui l'illuminazione è spenta.
 
 ### Ventilazione
-Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dell'ambiente) che permette di controllare se attivare il ricircolo dell'aria.
+Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dellambiente) che permette di controllare se attivare il ricircolo dell'aria.
 
 ### Composizione dell'Aria
-Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dell'ambiente) che rileva la miscela di sostanze aeriformi. 
+Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dellambiente) che rileva la miscela di sostanze aeriformi. 
 
 ### Pressione dell'Acqua
-Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dell'ambiente) che rileva la pressione dell'acqua nei contenitori preposti all'[Irrigazione](#irrigazione).
+Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dellambiente) che rileva la pressione dell'acqua nei contenitori preposti all'[Irrigazione](#irrigazione).
 Nel caso di rotture del sistema di [Irrigazione](#irrigazione) l'[Agricoltore](#agricoltore) può ricevere un [Warning](#warning).
 
 ### Sensore di movimento
-Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dell'ambiente) che specifica una sensibilità per intercettare movimenti significativi all'interno della [Serra](#serra). In caso di movimenti sospetti può essere inviata un [Warning](#warning) all'[Agricoltore](#agricoltore), e potrebbe essere richiesto una [Manutenzione Straordinaria](#manutenzione-straordinaria).
+Un [Parametro](#parametro) della [Configurazione dell'Ambiente](#configurazione-dellambiente) che specifica una sensibilità per intercettare movimenti significativi all'interno della [Serra](#serra). In caso di movimenti sospetti può essere inviata un [Warning](#warning) all'[Agricoltore](#agricoltore), e potrebbe essere richiesto una [Manutenzione Straordinaria](#manutenzione-straordinaria).
 
 ## Notifica
 Un avviso per l'[Agricoltore](#agricoltore) che può essere di tipo:
